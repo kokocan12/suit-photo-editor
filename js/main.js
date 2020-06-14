@@ -13,7 +13,7 @@ function handleMouseMove(evt){
     movePositionY=evt.clientY;
     let x=movePositionX-positionX;
     let y=movePositionY-positionY;
-    if(x>=0&&x<=200&&y>=0&&y<=260){
+    if(x>=0&&x<=200&&y>=0&&y<=160){
         cropper.style.transform=`translate(${x}px, ${y}px)`;
         innerImg.style.transform=`translate(${-x}px, ${-y}px)`;
     }
