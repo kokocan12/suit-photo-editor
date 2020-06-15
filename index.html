@@ -41,8 +41,10 @@
             </div>
             <div class="col-md-6 col-sm-12" id="result">
                 <h3 style="text-align: center;">이력서용 사진</h3>
-                <div class="result-img-wrap">
-                    <img src="img/suit.jpg" style="width:100px; height:140px; margin:0;">
+                <div class="result-img-wrap" style="width:100px; height:140px; position:relative; overflow: hidden;">
+                    <div style="width:100px; height:140px; overflow:hidden; position: absolute;">
+                        <img id="inner-img2" draggable="false" style="position:absolute; width:300px; height:300px;" src="https://img5.yna.co.kr/photo/ap/2018/06/16/PAP20180616053001848_P4.jpg" />
+                    </div>
                 </div>
                 <button class="btn btn-primary" style="display:block; width:300px; box-sizing: border-box; margin:10px auto;
                 ">다운로드</button>

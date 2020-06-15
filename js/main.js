@@ -1,6 +1,6 @@
 const cropper=document.querySelector('#cropper');
 const innerImg=document.querySelector('#inner-img');
-
+const innerImg2=document.querySelector('#inner-img2');
 
 let positionX;
 let positionY;
@@ -16,6 +16,7 @@ function handleMouseMove(evt){
     if(x>=0&&x<=200&&y>=0&&y<=160){
         cropper.style.transform=`translate(${x}px, ${y}px)`;
         innerImg.style.transform=`translate(${-x}px, ${-y}px)`;
+        innerImg2.style.transform=`translate(${-x}px, ${-y}px)`;
     }
 }
 
@@ -44,6 +45,7 @@ function handleTouchMove(evt){
     if(x>=0&&x<=200&&y>=0&&y<=160){
         cropper.style.transform=`translate(${x}px, ${y}px)`;
         innerImg.style.transform=`translate(${-x}px, ${-y}px)`;
+        innerImg2.style.transform=`translate(${-x}px, ${-y}px)`;
     }
 }
 
