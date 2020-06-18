@@ -29,11 +29,11 @@
                 <div style="position: relative; width:300px; height: 300px; border:solid 1px #ddd; margin:0 auto;">
                     <img style="position: absolute; width:300px; height:300px;" src="https://img5.yna.co.kr/photo/ap/2018/06/16/PAP20180616053001848_P4.jpg" />
                     <div style="position: absolute; width:300px; height:300px; background-color: rgba(0,0,0,0.7);"></div>
-                    <div id="cropper" style="width:100px; height:140px; position: absolute; cursor:move;">
-                        <div style="width:100px; height:140px; position: absolute; overflow: hidden; border:solid 1px #3399ff;">
+                    <div id="cropper" onselectstart="return false" style="width:100px; height:140px; position: absolute; cursor:move;">
+                        <div id="inner-cropper" onselectstart="return false" style="width:100px; height:140px; position: absolute; overflow: hidden; border:solid 1px #3399ff;">
                             <img id="inner-img" draggable="false" style="width:300px; height:300px;" src="https://img5.yna.co.kr/photo/ap/2018/06/16/PAP20180616053001848_P4.jpg" />
                         </div>
-                        <div class="se-dot" style="position:absolute; width:10px; height:10px; right:-5px; bottom:-5px; background-color:#3399ff; cursor:se-resize;"></div>
+                        <div id="se-dot" class="se-dot" style="position:absolute; width:10px; height:10px; right:-5px; bottom:-5px; background-color:#3399ff; cursor:se-resize;"></div>
                     </div>
                 </div>
                 <button class="btn btn-primary" style="display:block; width:300px; box-sizing: border-box; margin:10px auto;
