@@ -16,6 +16,8 @@ let y=0;
 let cropperBorderX=200;
 let cropperBorderY=160;
 
+let currentCropperWidth;
+
 function handleMouseMove(evt){
     endPositionX=evt.clientX;
     endPositionY=evt.clientY;
@@ -32,9 +34,10 @@ function handleMouseMove(evt){
     } else if(y>cropperBorderY){
         y=cropperBorderY;
     }
+
     cropper.style.transform=`translate(${x}px, ${y}px)`;
     innerImg.style.transform=`translate(${-x}px, ${-y}px)`;
-    innerImg2.style.transform=`translate(${-x}px, ${-y}px)`;
+    innerImg2.style.transform=`translate(${-x*(100/currentCropperWidth)}px, ${-y*(100/currentCropperWidth)}px)`;
     startPositionX=endPositionX;
     startPositionY=endPositionY;
 }
@@ -59,7 +62,7 @@ function mouseDownSeDot(evt){
 
 function mouseMoveSeDot(evt){
     endPositionX=evt.clientX;
-    let currentCropperWidth=(Number)(cropper.style.width.slice(0,-2));
+    currentCropperWidth=(Number)(cropper.style.width.slice(0,-2));
 
     
     currentCropperWidth+=(endPositionX-startPositionX);
@@ -70,8 +73,10 @@ function mouseMoveSeDot(evt){
         // width값이 변하면 height값은 비례하여 변함. x1.4
         cropper.style.height=`${currentCropperWidth*1.4}px`;
         innerCropper.style.height=`${currentCropperWidth*1.4}px`;
+        // 결과이미지 너비값도 변경
+        innerImg2.style.width=`${30000/currentCropperWidth}px`;
+        innerImg2.style.height=`${30000/currentCropperWidth}px`;
     }
-    console.log(currentCropperWidth);
     // cropper 이동값 제한 설정
     cropperBorderX=300-currentCropperWidth;
     cropperBorderY=300-(currentCropperWidth*1.4);
