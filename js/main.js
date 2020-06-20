@@ -16,7 +16,7 @@ let y=0;
 let cropperBorderX=200;
 let cropperBorderY=160;
 
-let currentCropperWidth;
+let currentCropperWidth=100;
 
 function handleMouseMove(evt){
     endPositionX=evt.clientX;
@@ -76,6 +76,8 @@ function mouseMoveSeDot(evt){
         // 결과이미지 너비값도 변경
         innerImg2.style.width=`${30000/currentCropperWidth}px`;
         innerImg2.style.height=`${30000/currentCropperWidth}px`;
+        // 결과이미지 이동값도 변경
+        innerImg2.style.transform=`translate(${-x*(100/currentCropperWidth)}px, ${-y*(100/currentCropperWidth)}px)`;
     }
     // cropper 이동값 제한 설정
     cropperBorderX=300-currentCropperWidth;
