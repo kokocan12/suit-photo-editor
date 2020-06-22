@@ -93,6 +93,8 @@ function mouseMoveSeDot(evt){
     resultImg.style.width=`${30000/currentCropperWidth}px`;
     resultImg.style.height=`${30000/currentCropperWidth}px`;
     // 결과이미지 이동값도 변경
+    resultX=oriX*(100/currentCropperWidth);
+    resultY=oriY*(100/currentCropperWidth);
     resultImg.style.transform=`translate(${-resultX}px, ${-resultY}px)`;
 
     // cropper 이동값 제한 설정
